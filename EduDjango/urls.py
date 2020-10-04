@@ -20,7 +20,7 @@ from main import views
 urlpatterns = [
     path("login", views.LoginView.as_view(), name="login"),
     path("register", views.RegisterView.as_view(), name="register"),
-    path("notes/", include("notes.urls")),
+    #path("notes/", include("notes.urls")),
     path("spider/", include("spider.urls")),
     re_path(r'^', views.UrlView.as_view()),
 ]
