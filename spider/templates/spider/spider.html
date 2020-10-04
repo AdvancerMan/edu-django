@@ -1,0 +1,97 @@
+{% extends 'main/page.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Spider attack</title>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'spider/css/spider.css' %}">
+{% endblock %}
+
+{% block header %}
+    <div class="forms">
+        <div class="form">
+            <p>Добавить павука</p>
+            <form method="post" action="{% url 'spider-add' %}">
+                {% csrf_token %}
+                <label>
+                    Сила
+                    <input type="text" name="power">
+                </label>
+                <label>
+                    Защита
+                    <input type="text" name="defense">
+                </label>
+                <label>
+                    Здоровье
+                    <input type="text" name="health">
+                </label>
+                <div class="radio-label">Враг?</div>
+                <label class="radio">
+                    <input type="radio" name="is_attacker" value="True"> Да
+                </label>
+                <label class="radio">
+                    <input type="radio" name="is_attacker" value="False">
+                    Нет
+                </label>
+                <input class="submit" type="submit" value="Подтвердить">
+            </form>
+        </div>
+
+        <div class="form">
+            <p>Изменить павука</p>
+            <form method="post" action="{% url 'spider-change' %}">
+                {% csrf_token %}
+                <label>
+                    Номер
+                    <input type="text" name="index">
+                </label>
+                <label>
+                    Сила
+                    <input type="text" name="power">
+                </label>
+                <label>
+                    Защита
+                    <input type="text" name="defense">
+                </label>
+                <label>
+                    Здоровье
+                    <input type="text" name="health">
+                </label>
+                <input class="submit" type="submit" value="Подтвердить">
+            </form>
+        </div>
+
+        <div class="form">
+            <p>Удалить павука</p>
+            <form method="post" action="{% url 'spider-remove' %}">
+                {% csrf_token %}
+                <label>
+                    Номер
+                    <input type="text" name="index">
+                </label>
+                <input class="submit" type="submit" value="Подтвердить">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="spiders-div">
+        <div class="friends spiders-inner-div">
+            {% for friend in friends %}
+                <div class="friend spider-div">
+                    <img alt="Друг" class="spider-img"
+                         src="{% static 'spider/png/no you.png' %}">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="enemies spiders-inner-div">
+            {% for enemies in enemies %}
+                <div class="enemy spider-div">
+                    <img alt="Враг" class="spider-img"
+                         src="{% static 'spider/png/gavna.png' %}">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

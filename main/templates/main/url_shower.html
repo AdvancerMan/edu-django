@@ -1,0 +1,10 @@
+{% extends "main/page.html" %}
+
+{% block head %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block main %}
+    Вы перешли по адресу:
+    <a href="{{ url }}">{{ url }}</a>
+{% endblock %}

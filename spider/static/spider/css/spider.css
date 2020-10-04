@@ -1,0 +1,42 @@
+header .forms .form {
+    margin-top: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 3rem;
+    text-align: center;
+}
+
+header .forms .form label {
+    display: block;
+    text-align: right;
+    margin-bottom: 0.5rem;
+}
+
+header .forms .form .radio-label {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+}
+
+header .forms .form .radio {
+    text-align: center;
+}
+
+header .forms .form .submit {
+    margin-top: 0.4rem;
+}
+
+.middle main .spiders-div {
+    margin: 0 auto;
+    width: max-content;
+}
+
+.middle main .spiders-inner-div,
+.middle main .spider-div {
+    display: inline-block;
+}
+
+
+.middle main .spider-img {
+    width: 300px;
+    height: 300px;
+}

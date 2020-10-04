@@ -1,0 +1,20 @@
+{% extends "main/page.html" %}
+{% load static %}
+
+{% block head %}
+    <title>Log in</title>
+{% endblock %}
+
+{% block main %}
+    <form method="post">
+        <p>
+            {% csrf_token %}
+            <label for="input_login">Логин: </label>
+            <input type="text" name="login" id="input_login">
+            <br>
+            <label for="input_login_password">Пароль: </label>
+            <input type="password" name="password" id="input_login_password">
+        </p>
+        <p><input type="submit"></p>
+    </form>
+{% endblock %}

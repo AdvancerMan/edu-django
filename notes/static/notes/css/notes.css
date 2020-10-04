@@ -1,0 +1,59 @@
+:root {
+    --border-color: rgb(185, 185, 185);
+    --border-radius: 6px;
+    --black-color: #333;
+    --caption-color: magenta;
+    --border-width: 1px;
+    --small-font-size: 0.9rem;
+    --title-font-size: 1.2rem;
+    --big-border-width: 5px;
+    --light-border-color: #e1e1e1;
+    --table-odd-background-color: #f8f8f8;
+    --light-weight-color: gray;
+    color: var(--black-color);
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+}
+
+html {
+    padding: 1rem;
+    min-width: 600px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.middle header .input_notes label {
+    text-align: right;
+}
+
+.middle header .input_notes input {
+    margin-bottom: 1rem;
+}
+
+.middle main .note {
+    margin-bottom: 2rem;
+}
+
+.middle main .note:last-child {
+     margin-bottom: 0;
+ }
+
+.middle main .note .title {
+    font-weight: bold;
+    color: var(--caption-color);
+    font-size: var(--title-font-size);
+    margin-bottom: 0.3rem;
+}
+
+.middle main .note .body {
+    border-left: var(--big-border-width) solid var(--border-color);
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.middle main .note .footer {
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0.5rem;
+    width: max-content;
+}

@@ -1,0 +1,46 @@
+{% extends "main/page.html" %}
+{% load static %}
+
+{% block head %}
+    <title>Notes</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'notes/css/notes.css' %}">
+{% endblock %}
+
+{% block header %}
+    {{ user }}
+    <form method="post" class="input_notes">
+        <p>
+            {% csrf_token %}
+            <label for="input_title">Имя заметки: </label>
+            <input type="text" name="title" id="input_title">
+            <br>
+            <label for="input_note">Заметка: </label>
+            <input type="text" name="text" id="input_note">
+        </p>
+        <p><input type="submit"></p>
+     </form>
+    <div class="auth">
+        <a href="{% url 'register' %}" class="register">Зарегистрироваться</a>
+        <a href="{% url 'login' %}" class="sign_in">Войти</a>
+    </div>
+{% endblock %}
+
+{% block main %}
+    {% for note in notes|dictsortreversed:"date" %}
+    <div class="note">
+        <div class="title">
+            {{ note.title }}
+        </div>
+        <div class="body">
+            {{ note.text }}
+        </div>
+        <div class="footer">
+            {{ note.date }}
+        </div>
+    </div>
+    {% empty %}
+    <div class="no_notes">
+        No notes were found :(
+    </div>
+    {% endfor %}
+{% endblock %}
